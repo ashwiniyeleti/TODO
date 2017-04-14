@@ -1,0 +1,33 @@
+body{
+  background: black;
+  color:white;
+  width:85%;
+  margin:auto;
+}
+body input{
+  color:black;
+  margin-bottom:10px;
+}
+body h1{
+  margin:20px;
+  text-align: center;
+}
+.heading{
+  margin:20px;
+}
+.heading p{
+  border: 1px solid darkgrey;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: antiquewhite;
+}
+#yourtodos{
+  margin-left:20px;
+}
+#add{
+  margin-left:20px;
+}
+#edit, #delete, #done{
+  margin:10px;
+}

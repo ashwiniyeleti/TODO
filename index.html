@@ -1,0 +1,38 @@
+<html ng-app="todoapp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="design.css"/>
+
+  <script src= "https://code.angularjs.org/1.5.5/angular.min.js"></script>
+  <script src= "script.js"></script>
+</head>
+<body>
+  <h1>Todo App !</h1>
+  <div ng-controller = "TodoCtrl as ctrl">
+    <div class="heading">
+      <p>Add a Todo:</p>
+      <input class="form-control" rows="5" type="text" placeholder="Enter your todo here" ng-model="ctrl.addtodo">
+    </div>
+
+    <button id="add" class="btn btn-success" ng-click ="ctrl.addnewtodo()">Add</button>
+
+    <div id="yourtodos">
+      <h3> Your Todos:</h3>
+      <button id="edit" class="btn btn-warning" ng-hide="ctrl.editMode" ng-click="ctrl.triggerEditMode()">Edit</button>
+      <button id="done" class="btn btn-info" ng-show="ctrl.editMode" ng-click="ctrl.triggerEditMode()">Done</button>
+      <ol>
+    <li  ng-repeat= "todo in ctrl.todos track by $index">
+      <span ng-hide="ctrl.editMode" ng-bind="todo"></span>
+      <input ng-show="ctrl.editMode" ng-model="todo" type="text"></input>
+      <button id="delete" class="btn btn-danger" ng-hide="ctrl.editMode" ng-click="ctrl.delete($index)">Delete</button>
+    </li>
+      </ol>
+    </div>
+
+  </div>
+</body>
+
+</html>
